@@ -860,7 +860,7 @@ function AddProductForm({ onClose, onSuccess }) {
         columnNumber: 5
     }, this);
 }
-_s(AddProductForm, "B5n3vtclTahRq8iwKSd9nguWM48=");
+_s(AddProductForm, "SpE2CFHASX5+fTT7qIFjnQBrakU=");
 _c = AddProductForm;
 var _c;
 __turbopack_context__.k.register(_c, "AddProductForm");
@@ -1359,7 +1359,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
         columnNumber: 5
     }, this);
 }
-_s(EditProductForm, "ATyxmwtdhicpp/AbNksBLUj7jas=");
+_s(EditProductForm, "0AfgCMZuJc1IP5YwfgzID7aivXg=");
 _c = EditProductForm;
 var _c;
 __turbopack_context__.k.register(_c, "EditProductForm");
@@ -2039,7 +2039,7 @@ function UserManagementTab() {
         columnNumber: 5
     }, this);
 }
-_s(UserManagementTab, "286QR1jNRHcA9a5coWOosvFR2AQ=");
+_s(UserManagementTab, "HDMdjlo9vai0dX4Qmcviq1kK6po=");
 _c = UserManagementTab;
 var _c;
 __turbopack_context__.k.register(_c, "UserManagementTab");
