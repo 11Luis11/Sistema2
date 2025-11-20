@@ -53,10 +53,10 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
-          'X-User-Role': user.role || ''
+          'X-User-Role': user.role || '',
+          'X-User-Id': user.id?.toString() || '', // Agregar esta línea
         },
         body: JSON.stringify({
-          code: formData.code,
           name: formData.name,
           description: formData.description,
           categoryId: parseInt(formData.categoryId),
@@ -64,6 +64,7 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
           size: formData.size,
           color: formData.color,
           gender: formData.gender,
+          stock: parseInt(formData.stock),
         }),
       });
 

@@ -53,14 +53,13 @@ export function AddProductForm({ onClose, onSuccess }: AddProductFormProps) {
         return;
       }
 
-      const user = JSON.parse(userStr);
-
       const response = await fetch('/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
-          'X-User-Role': user.role || ''
+          'X-User-Role': user.role || '',
+          'X-User-Id': user.id?.toString() || '', // Agregar esta línea
         },
         body: JSON.stringify({
           code: formData.code,
@@ -68,10 +67,10 @@ export function AddProductForm({ onClose, onSuccess }: AddProductFormProps) {
           description: formData.description,
           categoryId: parseInt(formData.categoryId),
           price: parseFloat(formData.price),
-          size: formData.size || 'N/A',
-          color: formData.color || 'N/A',
+          size: formData.size,
+          color: formData.color,
           gender: formData.gender,
-          stock: parseInt(formData.stock) || 0,
+          stock: parseInt(formData.stock),
         }),
       });
 

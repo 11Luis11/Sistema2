@@ -7,6 +7,11 @@ function getRoleFromRequest(request: NextRequest): string | null {
   return request.headers.get('X-User-Role') || null;
 }
 
+function getUserIdFromRequest(request: NextRequest): number | null {
+  const userIdHeader = request.headers.get('X-User-Id');
+  return userIdHeader ? parseInt(userIdHeader) : null;
+}
+
 export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -33,6 +38,15 @@ export async function PUT(
       );
     }
 
+    // Obtener user_id del header (sin buscar en sessions)
+    const userId = getUserIdFromRequest(request);
+    if (!userId) {
+      return NextResponse.json(
+        { success: false, message: 'User ID required', error_code: 'USER_ID_REQUIRED' },
+        { status: 400 }
+      );
+    }
+
     const body = await request.json();
     const validation = validateProduct(body);
 
@@ -48,31 +62,73 @@ export async function PUT(
       );
     }
 
-    const { name, description, categoryId, price, size, color, gender } = validation.data;
+    const { name, description, categoryId, price, size, color, gender, stock } = validation.data;
 
     const priceNum = Number(price);
     const categoryNum = Number(categoryId);
     const idNum = Number(id);
+    const newStock = stock !== undefined ? Number(stock) : null;
 
-    const result = await sql`
-      UPDATE products 
-      SET name = ${name},
-          description = ${description},
-          category_id = ${categoryNum},
-          price = ${priceNum},
-          size = ${size},
-          color = ${color},
-          gender = ${gender},
-          updated_at = NOW()
-      WHERE id = ${idNum} AND active = true
-      RETURNING *
+    // Obtener stock actual antes de actualizar
+    const currentProduct = await sql`
+      SELECT current_stock FROM products WHERE id = ${idNum} AND active = true
     `;
 
-    if (result.length === 0) {
+    if (currentProduct.length === 0) {
       return NextResponse.json(
         { success: false, message: 'Product not found', error_code: 'NOT_FOUND' },
         { status: 404 }
       );
+    }
+
+    const previousStock = currentProduct[0].current_stock;
+
+    // Actualizar producto
+    let result;
+    if (newStock !== null) {
+      result = await sql`
+        UPDATE products 
+        SET name = ${name},
+            description = ${description},
+            category_id = ${categoryNum},
+            price = ${priceNum},
+            size = ${size},
+            color = ${color},
+            gender = ${gender},
+            current_stock = ${newStock},
+            updated_at = NOW()
+        WHERE id = ${idNum} AND active = true
+        RETURNING *
+      `;
+    } else {
+      result = await sql`
+        UPDATE products 
+        SET name = ${name},
+            description = ${description},
+            category_id = ${categoryNum},
+            price = ${priceNum},
+            size = ${size},
+            color = ${color},
+            gender = ${gender},
+            updated_at = NOW()
+        WHERE id = ${idNum} AND active = true
+        RETURNING *
+      `;
+    }
+
+    // Registrar movimiento si cambió el stock
+    if (newStock !== null && previousStock !== newStock) {
+      const quantity = newStock - previousStock;
+      const movementType = quantity > 0 ? 'ENTRADA' : 'SALIDA';
+      
+      await sql`
+        INSERT INTO inventory_movements (
+          product_id, user_id, movement_type, quantity, previous_stock, new_stock, reason
+        )
+        VALUES (
+          ${idNum}, ${userId}, ${movementType}, ${Math.abs(quantity)}, ${previousStock}, ${newStock}, 'Ajuste de inventario'
+        )
+      `;
     }
 
     return NextResponse.json({
@@ -89,10 +145,6 @@ export async function PUT(
   }
 }
 
-
-// ------------------------------------------------------------
-// 🔥 DELETE REAL — ELIMINA DEFINITIVAMENTE DE LA BD
-// ------------------------------------------------------------
 export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }

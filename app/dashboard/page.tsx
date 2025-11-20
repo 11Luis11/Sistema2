@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Edit2, Trash2, Plus, LogOut, Package, Users } from 'lucide-react';
+import { Edit2, Trash2, Plus, LogOut, Package, Users, History, TrendingUp, TrendingDown } from 'lucide-react';
 import { AddProductForm } from '@/components/add-product-form';
 import { EditProductForm } from '@/components/edit-product-form';
 import { UserManagementTab } from '@/components/user-management-tab';
@@ -31,13 +31,30 @@ interface Product {
   color: string;
   gender: string;
 }
-/*Visualizacion de productos*/ 
+
+interface InventoryMovement {
+  id: number;
+  product_id: number;
+  product_name: string;
+  product_code: string;
+  user_name: string;
+  movement_type: 'ENTRADA' | 'SALIDA' | 'AJUSTE' | 'DEVOLUCION';
+  quantity: number;
+  previous_stock: number;
+  new_stock: number;
+  reason: string;
+  created_at: string;
+}
+
 export default function Dashboard() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
+  const [movements, setMovements] = useState<InventoryMovement[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMovements, setLoadingMovements] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const [movementSearchTerm, setMovementSearchTerm] = useState('');
   const [showAddProduct, setShowAddProduct] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
 
@@ -51,6 +68,7 @@ export default function Dashboard() {
     const userData = JSON.parse(userStr);
     setUser(userData);
     fetchProducts();
+    fetchMovements();
   }, [router]);
 
   async function fetchProducts() {
@@ -64,6 +82,25 @@ export default function Dashboard() {
       console.error('Error fetching products:', error);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function fetchMovements() {
+    try {
+      const token = localStorage.getItem('sessionToken');
+      const response = await fetch('/api/inventory-movements', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      const data = await response.json();
+      if (data.success) {
+        setMovements(data.movements);
+      }
+    } catch (error) {
+      console.error('Error fetching movements:', error);
+    } finally {
+      setLoadingMovements(false);
     }
   }
 
@@ -111,10 +148,54 @@ export default function Dashboard() {
     p.code.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const filteredMovements = movements.filter(m =>
+    m.product_name.toLowerCase().includes(movementSearchTerm.toLowerCase()) ||
+    m.product_code.toLowerCase().includes(movementSearchTerm.toLowerCase()) ||
+    m.movement_type.toLowerCase().includes(movementSearchTerm.toLowerCase())
+  );
+
   const canManageProducts = ['Administrator', 'Manager', 'ADM_INV'].includes(user?.role || '');
   const canDeleteProducts = ['Administrator'].includes(user?.role || '');
   const canEditProducts = ['Administrator', 'Manager'].includes(user?.role || '');
   const canManageUsers = ['Manager'].includes(user?.role || '');
+
+  const getMovementTypeColor = (type: string) => {
+    switch (type) {
+      case 'ENTRADA':
+        return 'bg-green-100 text-green-700';
+      case 'SALIDA':
+        return 'bg-red-100 text-red-700';
+      case 'AJUSTE':
+        return 'bg-blue-100 text-blue-700';
+      case 'DEVOLUCION':
+        return 'bg-purple-100 text-purple-700';
+      default:
+        return 'bg-gray-100 text-gray-700';
+    }
+  };
+
+  const getMovementIcon = (type: string) => {
+    switch (type) {
+      case 'ENTRADA':
+      case 'DEVOLUCION':
+        return <TrendingUp className="w-4 h-4" />;
+      case 'SALIDA':
+        return <TrendingDown className="w-4 h-4" />;
+      default:
+        return null;
+    }
+  };
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat('es-PE', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    }).format(date);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -152,10 +233,14 @@ export default function Dashboard() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">
         <Tabs defaultValue="products" className="w-full">
-          <TabsList className="grid w-full gap-4 mb-8">
+          <TabsList className={`grid w-full ${canManageUsers ? 'grid-cols-3' : 'grid-cols-2'} gap-4 mb-8`}>
             <TabsTrigger value="products" className="flex items-center gap-2">
               <Package className="w-4 h-4" />
               Productos
+            </TabsTrigger>
+            <TabsTrigger value="movements" className="flex items-center gap-2">
+              <History className="w-4 h-4" />
+              Historial de Movimientos
             </TabsTrigger>
             {canManageUsers && (
               <TabsTrigger value="users" className="flex items-center gap-2">
@@ -198,6 +283,7 @@ export default function Dashboard() {
                 onClose={() => setShowAddProduct(false)}
                 onSuccess={() => {
                   fetchProducts();
+                  fetchMovements();
                   setShowAddProduct(false);
                 }}
               />
@@ -209,6 +295,7 @@ export default function Dashboard() {
                 onClose={() => setEditingProduct(null)}
                 onSuccess={() => {
                   fetchProducts();
+                  fetchMovements();
                   setEditingProduct(null);
                 }}
               />
@@ -282,6 +369,88 @@ export default function Dashboard() {
                                 <Trash2 className="w-4 h-4 text-destructive" />
                               </button>
                             )}
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          </TabsContent>
+
+          {/* Movements Tab */}
+          <TabsContent value="movements" className="space-y-8">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-2">Historial de Movimientos</h2>
+                <p className="text-muted-foreground">Registro de todas las operaciones de inventario</p>
+              </div>
+            </div>
+
+            {/* Search */}
+            <Card className="p-6">
+              <Input
+                placeholder="Buscar por producto, código o tipo de movimiento..."
+                value={movementSearchTerm}
+                onChange={(e) => setMovementSearchTerm(e.target.value)}
+                className="bg-input border-border"
+              />
+            </Card>
+
+            {/* Movements Table */}
+            <Card className="overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-muted border-b border-border">
+                    <tr>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Fecha</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Producto</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Tipo</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Cantidad</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Stock Anterior</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Stock Nuevo</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Usuario</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-foreground">Motivo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {loadingMovements ? (
+                      <tr>
+                        <td colSpan={8} className="px-6 py-8 text-center text-muted-foreground">
+                          Cargando movimientos...
+                        </td>
+                      </tr>
+                    ) : filteredMovements.length === 0 ? (
+                      <tr>
+                        <td colSpan={8} className="px-6 py-8 text-center text-muted-foreground">
+                          No hay movimientos registrados
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredMovements.map((movement) => (
+                        <tr key={movement.id} className="border-b border-border hover:bg-muted/50 transition">
+                          <td className="px-6 py-4 text-sm text-muted-foreground">
+                            {formatDate(movement.created_at)}
+                          </td>
+                          <td className="px-6 py-4 text-sm">
+                            <div className="font-medium text-foreground">{movement.product_name}</div>
+                            <div className="text-xs text-muted-foreground">{movement.product_code}</div>
+                          </td>
+                          <td className="px-6 py-4 text-sm">
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 w-fit ${getMovementTypeColor(movement.movement_type)}`}>
+                              {getMovementIcon(movement.movement_type)}
+                              {movement.movement_type}
+                            </span>
+                          </td>
+                          <td className="px-6 py-4 text-sm font-semibold text-foreground">
+                            {movement.quantity > 0 ? '+' : ''}{movement.quantity}
+                          </td>
+                          <td className="px-6 py-4 text-sm text-muted-foreground">{movement.previous_stock}</td>
+                          <td className="px-6 py-4 text-sm font-medium text-foreground">{movement.new_stock}</td>
+                          <td className="px-6 py-4 text-sm text-muted-foreground">{movement.user_name}</td>
+                          <td className="px-6 py-4 text-sm text-muted-foreground max-w-xs truncate" title={movement.reason}>
+                            {movement.reason || '-'}
                           </td>
                         </tr>
                       ))

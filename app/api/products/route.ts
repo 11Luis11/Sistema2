@@ -8,6 +8,12 @@ function getRoleFromRequest(request: NextRequest): string | null {
   return request.headers.get('X-User-Role') || null;
 }
 
+// Helper to get user ID from header
+function getUserIdFromRequest(request: NextRequest): number | null {
+  const userIdHeader = request.headers.get('X-User-Id');
+  return userIdHeader ? parseInt(userIdHeader) : null;
+}
+
 // Helper: extrae ID desde URL con soporte para /api/products/123 y /api/products?id=123
 function extractId(request: NextRequest): number | null {
   const url = new URL(request.url);
@@ -132,6 +138,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Obtener user_id del header
+    const userId = getUserIdFromRequest(request);
+    if (!userId) {
+      return NextResponse.json(
+        { success: false, message: 'User ID required', error_code: 'USER_ID_REQUIRED' },
+        { status: 400 }
+      );
+    }
+
     const body = await request.json();
     const validation = validateProduct(body);
 
@@ -173,14 +188,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const initialStock = stock || 0;
+
+    // Insertar producto
     const result = await sql`
       INSERT INTO products (code, name, description, category_id, price, size, color, gender, current_stock, active)
-      VALUES (${code}, ${name}, ${description}, ${categoryId}, ${priceValue}, ${size}, ${color}, ${gender}, ${stock || 0}, true)
+      VALUES (${code}, ${name}, ${description}, ${categoryId}, ${priceValue}, ${size}, ${color}, ${gender}, ${initialStock}, true)
       RETURNING *
     `;
 
+    const newProduct = result[0];
+
+    // Registrar movimiento inicial si hay stock
+    if (initialStock > 0) {
+      await sql`
+        INSERT INTO inventory_movements (
+          product_id, user_id, movement_type, quantity, previous_stock, new_stock, reason
+        )
+        VALUES (
+          ${newProduct.id}, ${userId}, 'ENTRADA', ${initialStock}, 0, ${initialStock}, 'Stock inicial del producto'
+        )
+      `;
+    }
+
     return NextResponse.json(
-      { success: true, message: 'Product created successfully', product: result[0] },
+      { success: true, message: 'Product created successfully', product: newProduct },
       { status: 201 }
     );
   } catch (error) {
@@ -192,9 +224,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// -----------------------------
-// 🔥 DELETE QUE AHORA SÍ BORRA DE VERDAD
-// -----------------------------
 export async function DELETE(request: NextRequest) {
   try {
     const ip = request.headers.get('x-forwarded-for') || 'unknown';
