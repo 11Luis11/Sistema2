@@ -1,13 +1,26 @@
 'use client';
 
-import { useState } from 'react';
-import { Card } from '@/components/ui/card';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { X } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { X, Save } from 'lucide-react';
+
+interface Product {
+  id: number;
+  code: string;
+  name: string;
+  description: string;
+  category: string;
+  price: number;
+  current_stock: number;
+  size: string;
+  color: string;
+  gender: string;
+}
 
 interface EditProductFormProps {
-  product: any;
+  product: Product;
   onClose: () => void;
   onSuccess: () => void;
 }
@@ -16,14 +29,14 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
-    code: product.code,
     name: product.name,
-    description: product.description,
+    description: product.description || '',
     categoryId: '1',
-    price: product.price,
-    size: product.size,
-    color: product.color,
-    gender: product.gender,
+    price: product.price.toString(),
+    size: product.size || '',
+    color: product.color || '',
+    gender: product.gender || 'Unisex',
+    stock: product.current_stock.toString(),
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -31,16 +44,22 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  async function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError('');
+    setLoading(true);
 
     try {
-      const token = localStorage.getItem('sessionToken');
+      if (!formData.name || !formData.price) {
+        setError('Por favor completa los campos requeridos');
+        setLoading(false);
+        return;
+      }
+
       const userStr = localStorage.getItem('user');
+      const token = localStorage.getItem('sessionToken');
       
-      if (!token || !userStr) {
+      if (!userStr || !token) {
         setError('Sesión expirada. Por favor inicia sesión de nuevo');
         setLoading(false);
         return;
@@ -48,15 +67,18 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
 
       const user = JSON.parse(userStr);
 
+      console.log('[Edit] Sending update for product:', product.id);
+
       const response = await fetch(`/api/products/${product.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
           'X-User-Role': user.role || '',
-          'X-User-Id': user.id?.toString() || '', // Agregar esta línea
+          'X-User-Id': user.id?.toString() || '',
         },
         body: JSON.stringify({
+          code: product.code, // Agregar el código aunque no se modifique
           name: formData.name,
           description: formData.description,
           categoryId: parseInt(formData.categoryId),
@@ -68,23 +90,33 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
         }),
       });
 
-      const data = await response.json();
+      console.log('[Edit] Response status:', response.status);
 
       if (!response.ok) {
-        setError(data.message || `Error al actualizar (${response.status})`);
-        console.log('[v0] Update error:', data);
+        const errorText = await response.text();
+        console.error('[Edit] Error response:', errorText);
+        
+        try {
+          const data = JSON.parse(errorText);
+          setError(data.message || `Error al actualizar el producto (${response.status})`);
+        } catch {
+          setError(`Error al actualizar el producto (${response.status})`);
+        }
         return;
       }
 
-      alert('Producto actualizado exitosamente');
+      const data = await response.json();
+      console.log('[Edit] Success response:', data);
+
       onSuccess();
+      onClose();
     } catch (err) {
-      setError('Error al conectar con el servidor');
-      console.error('[v0] Error:', err);
+      setError('Error al actualizar el producto');
+      console.error('[Edit] Error:', err);
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
@@ -109,14 +141,15 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-foreground mb-2">
-                Código (No editable)
+                Código del Producto
               </label>
               <Input
                 type="text"
-                value={formData.code}
+                value={product.code}
                 disabled
-                className="bg-muted border-border"
+                className="bg-muted border-border cursor-not-allowed"
               />
+              <p className="text-xs text-muted-foreground mt-1">El código no se puede modificar</p>
             </div>
 
             <div>
@@ -128,7 +161,7 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Nombre del producto"
+                placeholder="ej: Jean Clásico"
                 className="bg-input border-border"
               />
             </div>
@@ -144,26 +177,11 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
               onChange={handleChange}
               placeholder="Descripción del producto"
               className="w-full px-3 py-2 bg-input border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              rows={2}
+              rows={3}
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Precio (S/) *
-              </label>
-              <Input
-                type="number"
-                step="0.01"
-                name="price"
-                value={formData.price}
-                onChange={handleChange}
-                placeholder="0.00"
-                className="bg-input border-border"
-              />
-            </div>
-
             <div>
               <label className="block text-sm font-medium text-foreground mb-2">
                 Categoría
@@ -180,6 +198,21 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
                 <option value="4">Accesorios</option>
               </select>
             </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">
+                Precio (S/) *
+              </label>
+              <Input
+                type="number"
+                step="0.01"
+                name="price"
+                value={formData.price}
+                onChange={handleChange}
+                placeholder="0.00"
+                className="bg-input border-border"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-3 gap-4">
@@ -192,7 +225,7 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
                 name="size"
                 value={formData.size}
                 onChange={handleChange}
-                placeholder="S, M, L, XL"
+                placeholder="ej: S, M, L, XL"
                 className="bg-input border-border"
               />
             </div>
@@ -206,7 +239,7 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
                 name="color"
                 value={formData.color}
                 onChange={handleChange}
-                placeholder="Negro, Azul"
+                placeholder="ej: Negro, Azul"
                 className="bg-input border-border"
               />
             </div>
@@ -228,6 +261,28 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
             </div>
           </div>
 
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Stock Actual
+            </label>
+            <Input
+              type="number"
+              name="stock"
+              value={formData.stock}
+              onChange={handleChange}
+              placeholder="0"
+              className="bg-input border-border"
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              Stock anterior: <span className="font-semibold">{product.current_stock}</span>
+              {parseInt(formData.stock) !== product.current_stock && (
+                <span className="ml-2 text-primary">
+                  (cambio: {parseInt(formData.stock) - product.current_stock > 0 ? '+' : ''}{parseInt(formData.stock) - product.current_stock})
+                </span>
+              )}
+            </p>
+          </div>
+
           <div className="flex gap-3 justify-end pt-4 border-t border-border">
             <Button
               type="button"
@@ -242,6 +297,7 @@ export function EditProductForm({ product, onClose, onSuccess }: EditProductForm
               className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
               disabled={loading}
             >
+              <Save className="w-4 h-4" />
               {loading ? 'Guardando...' : 'Guardar Cambios'}
             </Button>
           </div>

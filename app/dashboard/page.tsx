@@ -67,28 +67,63 @@ export default function Dashboard() {
     
     const userData = JSON.parse(userStr);
     setUser(userData);
-    fetchProducts();
-    fetchMovements();
+    
+    // OPTIMIZACIÓN: Cargar productos y movimientos en paralelo
+    fetchDataInParallel();
   }, [router]);
+
+  // Función optimizada para cargar datos en paralelo
+  async function fetchDataInParallel() {
+    try {
+      const token = localStorage.getItem('sessionToken');
+      
+      // Ejecutar ambas peticiones AL MISMO TIEMPO con límite de 50 registros
+      const [productsResponse, movementsResponse] = await Promise.all([
+        fetch('/api/products?limit=50'),
+        fetch('/api/inventory-movements?limit=50', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+      ]);
+
+      // Procesar respuestas en paralelo
+      const [productsData, movementsData] = await Promise.all([
+        productsResponse.json(),
+        movementsResponse.json()
+      ]);
+
+      if (productsData.success) {
+        setProducts(productsData.products);
+      }
+      
+      if (movementsData.success) {
+        setMovements(movementsData.movements);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
+      setLoadingMovements(false);
+    }
+  }
 
   async function fetchProducts() {
     try {
-      const response = await fetch('/api/products');
+      const response = await fetch('/api/products?limit=100');
       const data = await response.json();
       if (data.success) {
         setProducts(data.products);
       }
     } catch (error) {
       console.error('Error fetching products:', error);
-    } finally {
-      setLoading(false);
     }
   }
 
   async function fetchMovements() {
     try {
       const token = localStorage.getItem('sessionToken');
-      const response = await fetch('/api/inventory-movements', {
+      const response = await fetch('/api/inventory-movements?limit=100', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -99,8 +134,6 @@ export default function Dashboard() {
       }
     } catch (error) {
       console.error('Error fetching movements:', error);
-    } finally {
-      setLoadingMovements(false);
     }
   }
 
@@ -282,8 +315,7 @@ export default function Dashboard() {
               <AddProductForm
                 onClose={() => setShowAddProduct(false)}
                 onSuccess={() => {
-                  fetchProducts();
-                  fetchMovements();
+                  fetchDataInParallel();
                   setShowAddProduct(false);
                 }}
               />
@@ -294,8 +326,7 @@ export default function Dashboard() {
                 product={editingProduct}
                 onClose={() => setEditingProduct(null)}
                 onSuccess={() => {
-                  fetchProducts();
-                  fetchMovements();
+                  fetchDataInParallel();
                   setEditingProduct(null);
                 }}
               />

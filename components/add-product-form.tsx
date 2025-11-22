@@ -53,13 +53,15 @@ export function AddProductForm({ onClose, onSuccess }: AddProductFormProps) {
         return;
       }
 
+      const user = JSON.parse(userStr);
+
       const response = await fetch('/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
           'X-User-Role': user.role || '',
-          'X-User-Id': user.id?.toString() || '', // Agregar esta línea
+          'X-User-Id': user.id?.toString() || '',
         },
         body: JSON.stringify({
           code: formData.code,

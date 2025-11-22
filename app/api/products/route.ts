@@ -47,65 +47,35 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const search = searchParams.get('search') || '';
     const categoryId = searchParams.get('categoryId');
+    const limit = parseInt(searchParams.get('limit') || '100');
+    const offset = parseInt(searchParams.get('offset') || '0');
 
     const searchPattern = `%${search}%`;
     const category = categoryId ? parseInt(categoryId) : null;
 
-    let products;
-
-    if (search && category) {
-      products = await sql`
-        SELECT 
-          p.id, p.code, p.name, p.description, p.price, p.current_stock,
-          p.size, p.color, p.gender, c.name AS category,
-          p.created_at, p.updated_at
-        FROM products p
-        JOIN categories c ON p.category_id = c.id
-        WHERE p.active = true
-          AND (p.name ILIKE ${searchPattern} OR p.code ILIKE ${searchPattern})
-          AND p.category_id = ${category}
-        ORDER BY p.created_at DESC
-        LIMIT 1000
-      `;
-    } else if (search) {
-      products = await sql`
-        SELECT 
-          p.id, p.code, p.name, p.description, p.price, p.current_stock,
-          p.size, p.color, p.gender, c.name AS category,
-          p.created_at, p.updated_at
-        FROM products p
-        JOIN categories c ON p.category_id = c.id
-        WHERE p.active = true
-          AND (p.name ILIKE ${searchPattern} OR p.code ILIKE ${searchPattern})
-        ORDER BY p.created_at DESC
-        LIMIT 1000
-      `;
-    } else if (category) {
-      products = await sql`
-        SELECT 
-          p.id, p.code, p.name, p.description, p.price, p.current_stock,
-          p.size, p.color, p.gender, c.name AS category,
-          p.created_at, p.updated_at
-        FROM products p
-        JOIN categories c ON p.category_id = c.id
-        WHERE p.active = true
-          AND p.category_id = ${category}
-        ORDER BY p.created_at DESC
-        LIMIT 1000
-      `;
-    } else {
-      products = await sql`
-        SELECT 
-          p.id, p.code, p.name, p.description, p.price, p.current_stock,
-          p.size, p.color, p.gender, c.name AS category,
-          p.created_at, p.updated_at
-        FROM products p
-        JOIN categories c ON p.category_id = c.id
-        WHERE p.active = true
-        ORDER BY p.created_at DESC
-        LIMIT 1000
-      `;
+    // Construcción de query más eficiente usando una sola consulta con condiciones dinámicas
+    let whereConditions = sql`p.active = true`;
+    
+    if (search) {
+      whereConditions = sql`${whereConditions} AND (p.name ILIKE ${searchPattern} OR p.code ILIKE ${searchPattern})`;
     }
+    
+    if (category) {
+      whereConditions = sql`${whereConditions} AND p.category_id = ${category}`;
+    }
+
+    const products = await sql`
+      SELECT 
+        p.id, p.code, p.name, p.description, p.price, p.current_stock,
+        p.size, p.color, p.gender, c.name AS category,
+        p.created_at, p.updated_at
+      FROM products p
+      INNER JOIN categories c ON p.category_id = c.id
+      WHERE ${whereConditions}
+      ORDER BY p.created_at DESC
+      LIMIT ${limit}
+      OFFSET ${offset}
+    `;
 
     return NextResponse.json({ success: true, products });
   } catch (error) {
@@ -199,16 +169,22 @@ export async function POST(request: NextRequest) {
 
     const newProduct = result[0];
 
-    // Registrar movimiento inicial si hay stock
+    // Registrar movimiento inicial solo si hay stock
     if (initialStock > 0) {
-      await sql`
-        INSERT INTO inventory_movements (
-          product_id, user_id, movement_type, quantity, previous_stock, new_stock, reason
-        )
-        VALUES (
-          ${newProduct.id}, ${userId}, 'ENTRADA', ${initialStock}, 0, ${initialStock}, 'Stock inicial del producto'
-        )
-      `;
+      try {
+        await sql`
+          INSERT INTO inventory_movements (
+            product_id, user_id, movement_type, quantity, previous_stock, new_stock, reason
+          )
+          VALUES (
+            ${newProduct.id}, ${userId}, 'ENTRADA', ${initialStock}, 0, ${initialStock}, 'Stock inicial del producto'
+          )
+        `;
+      } catch (movementError) {
+        console.error('[Movement Insert Error]', movementError);
+        // Si falla el movimiento, no fallar todo - el producto ya está creado
+        // Podrías optar por eliminar el producto aquí si quieres que sea atómico
+      }
     }
 
     return NextResponse.json(

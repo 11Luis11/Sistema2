@@ -38,7 +38,6 @@ export async function PUT(
       );
     }
 
-    // Obtener user_id del header (sin buscar en sessions)
     const userId = getUserIdFromRequest(request);
     if (!userId) {
       return NextResponse.json(
@@ -48,6 +47,9 @@ export async function PUT(
     }
 
     const body = await request.json();
+    
+    console.log('[DEBUG PUT] Received data:', body);
+
     const validation = validateProduct(body);
 
     if (!validation.success) {
@@ -69,6 +71,8 @@ export async function PUT(
     const idNum = Number(id);
     const newStock = stock !== undefined ? Number(stock) : null;
 
+    console.log('[DEBUG PUT] Processing update for product:', idNum);
+
     // Obtener stock actual antes de actualizar
     const currentProduct = await sql`
       SELECT current_stock FROM products WHERE id = ${idNum} AND active = true
@@ -89,12 +93,12 @@ export async function PUT(
       result = await sql`
         UPDATE products 
         SET name = ${name},
-            description = ${description},
+            description = ${description || ''},
             category_id = ${categoryNum},
             price = ${priceNum},
-            size = ${size},
-            color = ${color},
-            gender = ${gender},
+            size = ${size || ''},
+            color = ${color || ''},
+            gender = ${gender || ''},
             current_stock = ${newStock},
             updated_at = NOW()
         WHERE id = ${idNum} AND active = true
@@ -104,17 +108,19 @@ export async function PUT(
       result = await sql`
         UPDATE products 
         SET name = ${name},
-            description = ${description},
+            description = ${description || ''},
             category_id = ${categoryNum},
             price = ${priceNum},
-            size = ${size},
-            color = ${color},
-            gender = ${gender},
+            size = ${size || ''},
+            color = ${color || ''},
+            gender = ${gender || ''},
             updated_at = NOW()
         WHERE id = ${idNum} AND active = true
         RETURNING *
       `;
     }
+
+    console.log('[DEBUG PUT] Product updated:', result[0]);
 
     // Registrar movimiento si cambió el stock
     if (newStock !== null && previousStock !== newStock) {
@@ -126,9 +132,11 @@ export async function PUT(
           product_id, user_id, movement_type, quantity, previous_stock, new_stock, reason
         )
         VALUES (
-          ${idNum}, ${userId}, ${movementType}, ${Math.abs(quantity)}, ${previousStock}, ${newStock}, 'Ajuste de inventario'
+          ${idNum}, ${userId}, ${movementType}, ${Math.abs(quantity)}, ${previousStock}, ${newStock}, 'Ajuste de inventario desde edición de producto'
         )
       `;
+
+      console.log('[DEBUG PUT] Movement created:', movementType, Math.abs(quantity));
     }
 
     return NextResponse.json({

@@ -325,6 +325,7 @@ function AddProductForm({ onClose, onSuccess }) {
                 setLoading(false);
                 return;
             }
+            const user = JSON.parse(userStr);
             const response = await fetch('/api/products', {
                 method: 'POST',
                 headers: {
@@ -384,7 +385,7 @@ function AddProductForm({ onClose, onSuccess }) {
                             children: "Agregar Nuevo Producto"
                         }, void 0, false, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 111,
+                            lineNumber: 113,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -394,18 +395,18 @@ function AddProductForm({ onClose, onSuccess }) {
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                lineNumber: 116,
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 112,
+                            lineNumber: 114,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                    lineNumber: 110,
+                    lineNumber: 112,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -417,7 +418,7 @@ function AddProductForm({ onClose, onSuccess }) {
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 122,
+                            lineNumber: 124,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -430,7 +431,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                             children: "Código del Producto *"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -442,13 +443,13 @@ function AddProductForm({ onClose, onSuccess }) {
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 134,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 128,
+                                    lineNumber: 130,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -458,7 +459,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                             children: "Nombre *"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 143,
+                                            lineNumber: 145,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -470,19 +471,19 @@ function AddProductForm({ onClose, onSuccess }) {
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 148,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 127,
+                            lineNumber: 129,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -492,7 +493,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                     children: "Descripción"
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 158,
+                                    lineNumber: 160,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -504,13 +505,13 @@ function AddProductForm({ onClose, onSuccess }) {
                                     rows: 2
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 163,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 157,
+                            lineNumber: 159,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -523,7 +524,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                             children: "Categoría"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 173,
+                                            lineNumber: 175,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -537,7 +538,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                                     children: "Jeans Clásicos"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                                    lineNumber: 182,
+                                                    lineNumber: 184,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -545,7 +546,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                                     children: "Jeans Degradados"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                                    lineNumber: 183,
+                                                    lineNumber: 185,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -553,7 +554,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                                     children: "Casacas"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                                    lineNumber: 184,
+                                                    lineNumber: 186,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -561,19 +562,19 @@ function AddProductForm({ onClose, onSuccess }) {
                                                     children: "Accesorios"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                                    lineNumber: 185,
+                                                    lineNumber: 187,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 178,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 174,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -583,7 +584,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                             children: "Precio (S/) *"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 190,
+                                            lineNumber: 192,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -596,19 +597,19 @@ function AddProductForm({ onClose, onSuccess }) {
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 193,
+                                            lineNumber: 195,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 189,
+                                    lineNumber: 191,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 171,
+                            lineNumber: 173,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -621,7 +622,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                             children: "Talla"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 207,
+                                            lineNumber: 209,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -633,13 +634,13 @@ function AddProductForm({ onClose, onSuccess }) {
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 210,
+                                            lineNumber: 212,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 206,
+                                    lineNumber: 208,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -649,7 +650,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                             children: "Color"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 223,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -661,13 +662,13 @@ function AddProductForm({ onClose, onSuccess }) {
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 224,
+                                            lineNumber: 226,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 220,
+                                    lineNumber: 222,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -677,7 +678,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                             children: "Género"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 235,
+                                            lineNumber: 237,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -691,7 +692,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                                     children: "Mujer"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                                    lineNumber: 244,
+                                                    lineNumber: 246,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -699,7 +700,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                                     children: "Hombre"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                                    lineNumber: 245,
+                                                    lineNumber: 247,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -707,25 +708,25 @@ function AddProductForm({ onClose, onSuccess }) {
                                                     children: "Unisex"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                                    lineNumber: 246,
+                                                    lineNumber: 248,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 238,
+                                            lineNumber: 240,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 234,
+                                    lineNumber: 236,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 205,
+                            lineNumber: 207,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -735,7 +736,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                     children: "Stock Inicial"
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 252,
+                                    lineNumber: 254,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -747,13 +748,13 @@ function AddProductForm({ onClose, onSuccess }) {
                                     className: "bg-input border-border"
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 255,
+                                    lineNumber: 257,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 251,
+                            lineNumber: 253,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -767,7 +768,7 @@ function AddProductForm({ onClose, onSuccess }) {
                                     children: "Cancelar"
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 266,
+                                    lineNumber: 268,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -779,37 +780,37 @@ function AddProductForm({ onClose, onSuccess }) {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                            lineNumber: 279,
+                                            lineNumber: 281,
                                             columnNumber: 15
                                         }, this),
                                         loading ? 'Guardando...' : 'Agregar Producto'
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                                    lineNumber: 274,
+                                    lineNumber: 276,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/add-product-form.tsx",
-                            lineNumber: 265,
+                            lineNumber: 267,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Sistema/components/add-product-form.tsx",
-                    lineNumber: 120,
+                    lineNumber: 122,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Sistema/components/add-product-form.tsx",
-            lineNumber: 109,
+            lineNumber: 111,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Sistema/components/add-product-form.tsx",
-        lineNumber: 108,
+        lineNumber: 110,
         columnNumber: 5
     }, this);
 }
@@ -823,10 +824,11 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Sistema/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Sistema/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Sistema/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Sistema/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Sistema/components/ui/input.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Sistema/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/Sistema/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__ = __turbopack_context__.i("[project]/Sistema/node_modules/lucide-react/dist/esm/icons/save.js [app-ssr] (ecmascript) <export default as Save>");
 'use client';
 ;
 ;
@@ -838,14 +840,14 @@ function EditProductForm({ product, onClose, onSuccess }) {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        code: product.code,
         name: product.name,
-        description: product.description,
+        description: product.description || '',
         categoryId: '1',
-        price: product.price,
-        size: product.size,
-        color: product.color,
-        gender: product.gender
+        price: product.price.toString(),
+        size: product.size || '',
+        color: product.color || '',
+        gender: product.gender || 'Unisex',
+        stock: product.current_stock.toString()
     });
     const handleChange = (e)=>{
         const { name, value } = e.target;
@@ -854,19 +856,25 @@ function EditProductForm({ product, onClose, onSuccess }) {
                 [name]: value
             }));
     };
-    async function handleSubmit(e) {
+    const handleSubmit = async (e)=>{
         e.preventDefault();
-        setLoading(true);
         setError('');
+        setLoading(true);
         try {
-            const token = localStorage.getItem('sessionToken');
+            if (!formData.name || !formData.price) {
+                setError('Por favor completa los campos requeridos');
+                setLoading(false);
+                return;
+            }
             const userStr = localStorage.getItem('user');
-            if (!token || !userStr) {
+            const token = localStorage.getItem('sessionToken');
+            if (!userStr || !token) {
                 setError('Sesión expirada. Por favor inicia sesión de nuevo');
                 setLoading(false);
                 return;
             }
             const user = JSON.parse(userStr);
+            console.log('[Edit] Sending update for product:', product.id);
             const response = await fetch(`/api/products/${product.id}`, {
                 method: 'PUT',
                 headers: {
@@ -876,6 +884,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                     'X-User-Id': user.id?.toString() || ''
                 },
                 body: JSON.stringify({
+                    code: product.code,
                     name: formData.name,
                     description: formData.description,
                     categoryId: parseInt(formData.categoryId),
@@ -886,21 +895,29 @@ function EditProductForm({ product, onClose, onSuccess }) {
                     stock: parseInt(formData.stock)
                 })
             });
-            const data = await response.json();
+            console.log('[Edit] Response status:', response.status);
             if (!response.ok) {
-                setError(data.message || `Error al actualizar (${response.status})`);
-                console.log('[v0] Update error:', data);
+                const errorText = await response.text();
+                console.error('[Edit] Error response:', errorText);
+                try {
+                    const data = JSON.parse(errorText);
+                    setError(data.message || `Error al actualizar el producto (${response.status})`);
+                } catch  {
+                    setError(`Error al actualizar el producto (${response.status})`);
+                }
                 return;
             }
-            alert('Producto actualizado exitosamente');
+            const data = await response.json();
+            console.log('[Edit] Success response:', data);
             onSuccess();
+            onClose();
         } catch (err) {
-            setError('Error al conectar con el servidor');
-            console.error('[v0] Error:', err);
+            setError('Error al actualizar el producto');
+            console.error('[Edit] Error:', err);
         } finally{
             setLoading(false);
         }
-    }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -914,7 +931,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                             children: "Editar Producto"
                         }, void 0, false, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 93,
+                            lineNumber: 125,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -924,18 +941,18 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                lineNumber: 98,
+                                lineNumber: 130,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 94,
+                            lineNumber: 126,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                    lineNumber: 92,
+                    lineNumber: 124,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -947,7 +964,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 104,
+                            lineNumber: 136,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -957,26 +974,34 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             className: "block text-sm font-medium text-foreground mb-2",
-                                            children: "Código (No editable)"
+                                            children: "Código del Producto"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 143,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
                                             type: "text",
-                                            value: formData.code,
+                                            value: product.code,
                                             disabled: true,
-                                            className: "bg-muted border-border"
+                                            className: "bg-muted border-border cursor-not-allowed"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 114,
+                                            lineNumber: 146,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-xs text-muted-foreground mt-1",
+                                            children: "El código no se puede modificar"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                            lineNumber: 152,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 142,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -986,7 +1011,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                             children: "Nombre *"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 156,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -994,23 +1019,23 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                             name: "name",
                                             value: formData.name,
                                             onChange: handleChange,
-                                            placeholder: "Nombre del producto",
+                                            placeholder: "ej: Jean Clásico",
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 126,
+                                            lineNumber: 159,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 109,
+                            lineNumber: 141,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1020,7 +1045,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                     children: "Descripción"
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 171,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1029,16 +1054,16 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                     onChange: handleChange,
                                     placeholder: "Descripción del producto",
                                     className: "w-full px-3 py-2 bg-input border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary",
-                                    rows: 2
+                                    rows: 3
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 174,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 137,
+                            lineNumber: 170,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1048,39 +1073,10 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                             className: "block text-sm font-medium text-foreground mb-2",
-                                            children: "Precio (S/) *"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 153,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                                            type: "number",
-                                            step: "0.01",
-                                            name: "price",
-                                            value: formData.price,
-                                            onChange: handleChange,
-                                            placeholder: "0.00",
-                                            className: "bg-input border-border"
-                                        }, void 0, false, {
-                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 156,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 152,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                            className: "block text-sm font-medium text-foreground mb-2",
                                             children: "Categoría"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 186,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1094,7 +1090,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                                     children: "Jeans Clásicos"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 195,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1102,7 +1098,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                                     children: "Jeans Degradados"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                                    lineNumber: 178,
+                                                    lineNumber: 196,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1110,7 +1106,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                                     children: "Casacas"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                                    lineNumber: 179,
+                                                    lineNumber: 197,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1118,25 +1114,54 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                                     children: "Accesorios"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                                    lineNumber: 180,
+                                                    lineNumber: 198,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 171,
+                                            lineNumber: 189,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 167,
+                                    lineNumber: 185,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                            className: "block text-sm font-medium text-foreground mb-2",
+                                            children: "Precio (S/) *"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                            lineNumber: 203,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                            type: "number",
+                                            step: "0.01",
+                                            name: "price",
+                                            value: formData.price,
+                                            onChange: handleChange,
+                                            placeholder: "0.00",
+                                            className: "bg-input border-border"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                            lineNumber: 206,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                    lineNumber: 202,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 151,
+                            lineNumber: 184,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1149,7 +1174,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                             children: "Talla"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 187,
+                                            lineNumber: 220,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1157,17 +1182,17 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                             name: "size",
                                             value: formData.size,
                                             onChange: handleChange,
-                                            placeholder: "S, M, L, XL",
+                                            placeholder: "ej: S, M, L, XL",
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 190,
+                                            lineNumber: 223,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 186,
+                                    lineNumber: 219,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1177,7 +1202,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                             children: "Color"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 234,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1185,17 +1210,17 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                             name: "color",
                                             value: formData.color,
                                             onChange: handleChange,
-                                            placeholder: "Negro, Azul",
+                                            placeholder: "ej: Negro, Azul",
                                             className: "bg-input border-border"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 237,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 200,
+                                    lineNumber: 233,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1205,7 +1230,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                             children: "Género"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 215,
+                                            lineNumber: 248,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1219,7 +1244,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                                     children: "Mujer"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                                    lineNumber: 224,
+                                                    lineNumber: 257,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1227,7 +1252,7 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                                     children: "Hombre"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                                    lineNumber: 225,
+                                                    lineNumber: 258,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1235,25 +1260,84 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                                     children: "Unisex"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                                    lineNumber: 226,
+                                                    lineNumber: 259,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                            lineNumber: 218,
+                                            lineNumber: 251,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 247,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 185,
+                            lineNumber: 218,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                    className: "block text-sm font-medium text-foreground mb-2",
+                                    children: "Stock Actual"
+                                }, void 0, false, {
+                                    fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                    lineNumber: 265,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                    type: "number",
+                                    name: "stock",
+                                    value: formData.stock,
+                                    onChange: handleChange,
+                                    placeholder: "0",
+                                    className: "bg-input border-border"
+                                }, void 0, false, {
+                                    fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                    lineNumber: 268,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-xs text-muted-foreground mt-1",
+                                    children: [
+                                        "Stock anterior: ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-semibold",
+                                            children: product.current_stock
+                                        }, void 0, false, {
+                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                            lineNumber: 277,
+                                            columnNumber: 31
+                                        }, this),
+                                        parseInt(formData.stock) !== product.current_stock && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "ml-2 text-primary",
+                                            children: [
+                                                "(cambio: ",
+                                                parseInt(formData.stock) - product.current_stock > 0 ? '+' : '',
+                                                parseInt(formData.stock) - product.current_stock,
+                                                ")"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                            lineNumber: 279,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                    lineNumber: 276,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                            lineNumber: 264,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1267,40 +1351,49 @@ function EditProductForm({ product, onClose, onSuccess }) {
                                     children: "Cancelar"
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 232,
+                                    lineNumber: 287,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                     type: "submit",
                                     className: "bg-primary hover:bg-primary/90 text-primary-foreground gap-2",
                                     disabled: loading,
-                                    children: loading ? 'Guardando...' : 'Guardar Cambios'
-                                }, void 0, false, {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__["Save"], {
+                                            className: "w-4 h-4"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Sistema/components/edit-product-form.tsx",
+                                            lineNumber: 300,
+                                            columnNumber: 15
+                                        }, this),
+                                        loading ? 'Guardando...' : 'Guardar Cambios'
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                                    lineNumber: 240,
+                                    lineNumber: 295,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                            lineNumber: 231,
+                            lineNumber: 286,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Sistema/components/edit-product-form.tsx",
-                    lineNumber: 102,
+                    lineNumber: 134,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Sistema/components/edit-product-form.tsx",
-            lineNumber: 91,
+            lineNumber: 123,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Sistema/components/edit-product-form.tsx",
-        lineNumber: 90,
+        lineNumber: 122,
         columnNumber: 5
     }, this);
 }
@@ -2031,28 +2124,57 @@ function Dashboard() {
         }
         const userData = JSON.parse(userStr);
         setUser(userData);
-        fetchProducts();
-        fetchMovements();
+        // OPTIMIZACIÓN: Cargar productos y movimientos en paralelo
+        fetchDataInParallel();
     }, [
         router
     ]);
+    // Función optimizada para cargar datos en paralelo
+    async function fetchDataInParallel() {
+        try {
+            const token = localStorage.getItem('sessionToken');
+            // Ejecutar ambas peticiones AL MISMO TIEMPO con límite de 50 registros
+            const [productsResponse, movementsResponse] = await Promise.all([
+                fetch('/api/products?limit=50'),
+                fetch('/api/inventory-movements?limit=50', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+            ]);
+            // Procesar respuestas en paralelo
+            const [productsData, movementsData] = await Promise.all([
+                productsResponse.json(),
+                movementsResponse.json()
+            ]);
+            if (productsData.success) {
+                setProducts(productsData.products);
+            }
+            if (movementsData.success) {
+                setMovements(movementsData.movements);
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        } finally{
+            setLoading(false);
+            setLoadingMovements(false);
+        }
+    }
     async function fetchProducts() {
         try {
-            const response = await fetch('/api/products');
+            const response = await fetch('/api/products?limit=100');
             const data = await response.json();
             if (data.success) {
                 setProducts(data.products);
             }
         } catch (error) {
             console.error('Error fetching products:', error);
-        } finally{
-            setLoading(false);
         }
     }
     async function fetchMovements() {
         try {
             const token = localStorage.getItem('sessionToken');
-            const response = await fetch('/api/inventory-movements', {
+            const response = await fetch('/api/inventory-movements?limit=100', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -2063,8 +2185,6 @@ function Dashboard() {
             }
         } catch (error) {
             console.error('Error fetching movements:', error);
-        } finally{
-            setLoadingMovements(false);
         }
     }
     async function handleDeleteProduct(id) {
@@ -2139,7 +2259,7 @@ function Dashboard() {
                     className: "w-4 h-4"
                 }, void 0, false, {
                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                    lineNumber: 181,
+                    lineNumber: 214,
                     columnNumber: 16
                 }, this);
             case 'SALIDA':
@@ -2147,7 +2267,7 @@ function Dashboard() {
                     className: "w-4 h-4"
                 }, void 0, false, {
                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                    lineNumber: 183,
+                    lineNumber: 216,
                     columnNumber: 16
                 }, this);
             default:
@@ -2179,7 +2299,7 @@ function Dashboard() {
                                     className: "w-8 h-8 text-primary"
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 206,
+                                    lineNumber: 239,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2189,7 +2309,7 @@ function Dashboard() {
                                             children: "YeniJeans"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 208,
+                                            lineNumber: 241,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2197,19 +2317,19 @@ function Dashboard() {
                                             children: "Control de Inventario"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 209,
+                                            lineNumber: 242,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 207,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                            lineNumber: 205,
+                            lineNumber: 238,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2227,7 +2347,7 @@ function Dashboard() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 215,
+                                            lineNumber: 248,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2235,13 +2355,13 @@ function Dashboard() {
                                             children: user?.role
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 218,
+                                            lineNumber: 251,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 247,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2254,31 +2374,31 @@ function Dashboard() {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 226,
+                                            lineNumber: 259,
                                             columnNumber: 15
                                         }, this),
                                         "Cerrar Sesión"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 220,
+                                    lineNumber: 253,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                            lineNumber: 213,
+                            lineNumber: 246,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                    lineNumber: 204,
+                    lineNumber: 237,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                lineNumber: 203,
+                lineNumber: 236,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -2298,14 +2418,14 @@ function Dashboard() {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 238,
+                                            lineNumber: 271,
                                             columnNumber: 15
                                         }, this),
                                         "Productos"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 237,
+                                    lineNumber: 270,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -2316,14 +2436,14 @@ function Dashboard() {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 242,
+                                            lineNumber: 275,
                                             columnNumber: 15
                                         }, this),
                                         "Historial de Movimientos"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 241,
+                                    lineNumber: 274,
                                     columnNumber: 13
                                 }, this),
                                 canManageUsers && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -2334,20 +2454,20 @@ function Dashboard() {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 247,
+                                            lineNumber: 280,
                                             columnNumber: 17
                                         }, this),
                                         "Gestionar Usuarios"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 246,
+                                    lineNumber: 279,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                            lineNumber: 236,
+                            lineNumber: 269,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2364,7 +2484,7 @@ function Dashboard() {
                                                     children: "Productos"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                    lineNumber: 257,
+                                                    lineNumber: 290,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2372,13 +2492,13 @@ function Dashboard() {
                                                     children: "Gestiona el inventario de YeniJeans"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                    lineNumber: 258,
+                                                    lineNumber: 291,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 256,
+                                            lineNumber: 289,
                                             columnNumber: 15
                                         }, this),
                                         canManageProducts && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2389,20 +2509,20 @@ function Dashboard() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                    lineNumber: 265,
+                                                    lineNumber: 298,
                                                     columnNumber: 19
                                                 }, this),
                                                 "Agregar Producto"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 261,
+                                            lineNumber: 294,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 255,
+                                    lineNumber: 288,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2414,37 +2534,35 @@ function Dashboard() {
                                         className: "bg-input border-border"
                                     }, void 0, false, {
                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 306,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 272,
+                                    lineNumber: 305,
                                     columnNumber: 13
                                 }, this),
                                 showAddProduct && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$add$2d$product$2d$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AddProductForm"], {
                                     onClose: ()=>setShowAddProduct(false),
                                     onSuccess: ()=>{
-                                        fetchProducts();
-                                        fetchMovements();
+                                        fetchDataInParallel();
                                         setShowAddProduct(false);
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 282,
+                                    lineNumber: 315,
                                     columnNumber: 15
                                 }, this),
                                 editingProduct && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$edit$2d$product$2d$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EditProductForm"], {
                                     product: editingProduct,
                                     onClose: ()=>setEditingProduct(null),
                                     onSuccess: ()=>{
-                                        fetchProducts();
-                                        fetchMovements();
+                                        fetchDataInParallel();
                                         setEditingProduct(null);
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 293,
+                                    lineNumber: 325,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2463,7 +2581,7 @@ function Dashboard() {
                                                                 children: "Código"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 310,
+                                                                lineNumber: 341,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2471,7 +2589,7 @@ function Dashboard() {
                                                                 children: "Nombre"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 311,
+                                                                lineNumber: 342,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2479,7 +2597,7 @@ function Dashboard() {
                                                                 children: "Categoría"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 312,
+                                                                lineNumber: 343,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2487,7 +2605,7 @@ function Dashboard() {
                                                                 children: "Precio"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 313,
+                                                                lineNumber: 344,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2495,7 +2613,7 @@ function Dashboard() {
                                                                 children: "Stock"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 314,
+                                                                lineNumber: 345,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2503,7 +2621,7 @@ function Dashboard() {
                                                                 children: "Talla"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 315,
+                                                                lineNumber: 346,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2511,7 +2629,7 @@ function Dashboard() {
                                                                 children: "Color"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 316,
+                                                                lineNumber: 347,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2519,18 +2637,18 @@ function Dashboard() {
                                                                 children: "Acciones"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 317,
+                                                                lineNumber: 348,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                        lineNumber: 309,
+                                                        lineNumber: 340,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                    lineNumber: 308,
+                                                    lineNumber: 339,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -2541,12 +2659,12 @@ function Dashboard() {
                                                             children: "Cargando productos..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                            lineNumber: 323,
+                                                            lineNumber: 354,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                        lineNumber: 322,
+                                                        lineNumber: 353,
                                                         columnNumber: 23
                                                     }, this) : filteredProducts.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2555,12 +2673,12 @@ function Dashboard() {
                                                             children: "No hay productos disponibles"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                            lineNumber: 329,
+                                                            lineNumber: 360,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                        lineNumber: 328,
+                                                        lineNumber: 359,
                                                         columnNumber: 23
                                                     }, this) : filteredProducts.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                             className: "border-b border-border hover:bg-muted/50 transition",
@@ -2570,7 +2688,7 @@ function Dashboard() {
                                                                     children: product.code
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 336,
+                                                                    lineNumber: 367,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2578,7 +2696,7 @@ function Dashboard() {
                                                                     children: product.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 337,
+                                                                    lineNumber: 368,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2586,7 +2704,7 @@ function Dashboard() {
                                                                     children: product.category
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 338,
+                                                                    lineNumber: 369,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2597,7 +2715,7 @@ function Dashboard() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 339,
+                                                                    lineNumber: 370,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2607,12 +2725,12 @@ function Dashboard() {
                                                                         children: product.current_stock
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                        lineNumber: 341,
+                                                                        lineNumber: 372,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 340,
+                                                                    lineNumber: 371,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2620,7 +2738,7 @@ function Dashboard() {
                                                                     children: product.size
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 351,
+                                                                    lineNumber: 382,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2628,7 +2746,7 @@ function Dashboard() {
                                                                     children: product.color
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 352,
+                                                                    lineNumber: 383,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2642,12 +2760,12 @@ function Dashboard() {
                                                                                 className: "w-4 h-4 text-primary"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                                lineNumber: 360,
+                                                                                lineNumber: 391,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                            lineNumber: 355,
+                                                                            lineNumber: 386,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         canDeleteProducts && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2658,51 +2776,51 @@ function Dashboard() {
                                                                                 className: "w-4 h-4 text-destructive"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                                lineNumber: 369,
+                                                                                lineNumber: 400,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                            lineNumber: 364,
+                                                                            lineNumber: 395,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 353,
+                                                                    lineNumber: 384,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, product.id, true, {
                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                            lineNumber: 335,
+                                                            lineNumber: 366,
                                                             columnNumber: 25
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                    lineNumber: 320,
+                                                    lineNumber: 351,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 338,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                        lineNumber: 306,
+                                        lineNumber: 337,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 305,
+                                    lineNumber: 336,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                            lineNumber: 254,
+                            lineNumber: 287,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2718,7 +2836,7 @@ function Dashboard() {
                                                 children: "Historial de Movimientos"
                                             }, void 0, false, {
                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                lineNumber: 386,
+                                                lineNumber: 417,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2726,18 +2844,18 @@ function Dashboard() {
                                                 children: "Registro de todas las operaciones de inventario"
                                             }, void 0, false, {
                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                lineNumber: 387,
+                                                lineNumber: 418,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                        lineNumber: 385,
+                                        lineNumber: 416,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 384,
+                                    lineNumber: 415,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2749,12 +2867,12 @@ function Dashboard() {
                                         className: "bg-input border-border"
                                     }, void 0, false, {
                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                        lineNumber: 393,
+                                        lineNumber: 424,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 392,
+                                    lineNumber: 423,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2773,7 +2891,7 @@ function Dashboard() {
                                                                 children: "Fecha"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 407,
+                                                                lineNumber: 438,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2781,7 +2899,7 @@ function Dashboard() {
                                                                 children: "Producto"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 408,
+                                                                lineNumber: 439,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2789,7 +2907,7 @@ function Dashboard() {
                                                                 children: "Tipo"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 409,
+                                                                lineNumber: 440,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2797,7 +2915,7 @@ function Dashboard() {
                                                                 children: "Cantidad"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 410,
+                                                                lineNumber: 441,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2805,7 +2923,7 @@ function Dashboard() {
                                                                 children: "Stock Anterior"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 411,
+                                                                lineNumber: 442,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2813,7 +2931,7 @@ function Dashboard() {
                                                                 children: "Stock Nuevo"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 412,
+                                                                lineNumber: 443,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2821,7 +2939,7 @@ function Dashboard() {
                                                                 children: "Usuario"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 413,
+                                                                lineNumber: 444,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2829,18 +2947,18 @@ function Dashboard() {
                                                                 children: "Motivo"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                lineNumber: 414,
+                                                                lineNumber: 445,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                        lineNumber: 406,
+                                                        lineNumber: 437,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                    lineNumber: 405,
+                                                    lineNumber: 436,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -2851,12 +2969,12 @@ function Dashboard() {
                                                             children: "Cargando movimientos..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                            lineNumber: 420,
+                                                            lineNumber: 451,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                        lineNumber: 419,
+                                                        lineNumber: 450,
                                                         columnNumber: 23
                                                     }, this) : filteredMovements.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2865,12 +2983,12 @@ function Dashboard() {
                                                             children: "No hay movimientos registrados"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                            lineNumber: 426,
+                                                            lineNumber: 457,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                        lineNumber: 425,
+                                                        lineNumber: 456,
                                                         columnNumber: 23
                                                     }, this) : filteredMovements.map((movement)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                             className: "border-b border-border hover:bg-muted/50 transition",
@@ -2880,7 +2998,7 @@ function Dashboard() {
                                                                     children: formatDate(movement.created_at)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 433,
+                                                                    lineNumber: 464,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2891,7 +3009,7 @@ function Dashboard() {
                                                                             children: movement.product_name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                            lineNumber: 437,
+                                                                            lineNumber: 468,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2899,13 +3017,13 @@ function Dashboard() {
                                                                             children: movement.product_code
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                            lineNumber: 438,
+                                                                            lineNumber: 469,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 436,
+                                                                    lineNumber: 467,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2918,12 +3036,12 @@ function Dashboard() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                        lineNumber: 441,
+                                                                        lineNumber: 472,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 440,
+                                                                    lineNumber: 471,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2934,7 +3052,7 @@ function Dashboard() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 446,
+                                                                    lineNumber: 477,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2942,7 +3060,7 @@ function Dashboard() {
                                                                     children: movement.previous_stock
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 449,
+                                                                    lineNumber: 480,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2950,7 +3068,7 @@ function Dashboard() {
                                                                     children: movement.new_stock
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 450,
+                                                                    lineNumber: 481,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2958,7 +3076,7 @@ function Dashboard() {
                                                                     children: movement.user_name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 451,
+                                                                    lineNumber: 482,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -2967,69 +3085,69 @@ function Dashboard() {
                                                                     children: movement.reason || '-'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                                    lineNumber: 452,
+                                                                    lineNumber: 483,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, movement.id, true, {
                                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                            lineNumber: 432,
+                                                            lineNumber: 463,
                                                             columnNumber: 25
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                                    lineNumber: 417,
+                                                    lineNumber: 448,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                            lineNumber: 404,
+                                            lineNumber: 435,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                        lineNumber: 403,
+                                        lineNumber: 434,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                    lineNumber: 402,
+                                    lineNumber: 433,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                            lineNumber: 383,
+                            lineNumber: 414,
                             columnNumber: 11
                         }, this),
                         canManageUsers && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
                             value: "users",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Sistema$2f$components$2f$user$2d$management$2d$tab$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["UserManagementTab"], {}, void 0, false, {
                                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                                lineNumber: 467,
+                                lineNumber: 498,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                            lineNumber: 466,
+                            lineNumber: 497,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                    lineNumber: 235,
+                    lineNumber: 268,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Sistema/app/dashboard/page.tsx",
-                lineNumber: 234,
+                lineNumber: 267,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Sistema/app/dashboard/page.tsx",
-        lineNumber: 201,
+        lineNumber: 234,
         columnNumber: 5
     }, this);
 }
