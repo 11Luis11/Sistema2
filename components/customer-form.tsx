@@ -52,7 +52,6 @@ export default function CustomerForm({ initial = null, onSuccess }: { initial?: 
     </form>
   );
 }
-
 async function submit(e: any) {
   e.preventDefault();
   if (!form.name || !form.document || !form.email) {
