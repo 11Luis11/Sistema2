@@ -4,8 +4,20 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
+<<<<<<< HEAD
     "previewModeId": "53d57af6a67cbf1fe1a32c49ba007e66",
     "previewModeSigningKey": "b2fa644181f3713303ef3b9b42639a2a1aa653aa166436fd63f2c8b68f2951cd",
     "previewModeEncryptionKey": "8f5c59dd185af39b0ae6cd0a6d0825a10b1145cd6454b75b0db43b3a28db5419"
+=======
+<<<<<<< HEAD
+    "previewModeId": "08e5831225dbbb6f510ee0b25f03ab21",
+    "previewModeSigningKey": "2766d1041bf0637bb4ab8f6a81a7329757be343d46641694853dec5bea1cd1eb",
+    "previewModeEncryptionKey": "5dd3b85e348a1b159a255d88d07c4c2f6b9f851e629efd7a591841860756416f"
+=======
+    "previewModeId": "53d57af6a67cbf1fe1a32c49ba007e66",
+    "previewModeSigningKey": "b2fa644181f3713303ef3b9b42639a2a1aa653aa166436fd63f2c8b68f2951cd",
+    "previewModeEncryptionKey": "8f5c59dd185af39b0ae6cd0a6d0825a10b1145cd6454b75b0db43b3a28db5419"
+>>>>>>> 354c89e (Agregar punto final de clientes GET)
+>>>>>>> 8b6e376 (Agregar punto final de clientes GET)
   }
 }
