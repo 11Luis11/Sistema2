@@ -246,7 +246,7 @@ export function SuppliersManagement() {
             </div>
           )}
 
-          <div className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium mb-2 text-foreground">
@@ -386,14 +386,14 @@ export function SuppliersManagement() {
             </div>
 
             <div className="flex gap-3 pt-4">
-              <Button onClick={handleSubmit} className="flex-1" disabled={loading}>
+              <Button type="submit" className="flex-1" disabled={loading}>
                 {editingId ? 'Actualizar' : 'Crear'} Proveedor
               </Button>
-              <Button variant="outline" onClick={resetForm}>
+              <Button type="button" variant="outline" onClick={resetForm}>
                 Cancelar
               </Button>
             </div>
-          </div>
+          </form>
         </Card>
       )}
 
