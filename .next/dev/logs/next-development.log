@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 9763b4b4ae7d06641f64ec79ce1fc92cb9ffc67a
 [00:00:01.899] Server  LOG      ✓ Ready in 1246ms
 [00:00:22.048] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:00:22.621] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
@@ -23,6 +26,7 @@
 [00:00:46.546] Server  LOG     [Analytics] Final Response Summary: {}
 [00:00:46.678] Browser LOG     Sales Data: {"sales":[{"created_at":"2025-12-09T11:05:16.245Z","customer_email":null,"customer_name":null,"customer_phone":null,"id":9,"items_count":"1","payment_method":"Efectivo","sale_code":"SALE-000008","status":"completed","total_amount":"179.80","user_name":"Admin YeniJeans"},{"created_at":"2025-12-08T09:28:32.620Z","customer_email":"luistarazona513@gmail.com","customer_name":"Casaca Overside","customer_phone":"993879551","id":8,"items_count":"1","payment_method":"Transferencia","sale_code":"SALE-000007","status":"completed","total_amount":"179.80","user_name":"Admin YeniJeans"},{"created_at":"2025-12-08T09:18:23.831Z","customer_email":"miguel@email.com","customer_name":"Miguel Castro","customer_phone":"956789123","id":6,"items_count":"0","payment_method":"Efectivo","sale_code":"SALE-006","status":"completed","total_amount":"89.90","user_name":"Admin YeniJeans"},{"created_at":"2025-12-07T09:18:23.831Z","customer_email":"ana@email.com","customer_name":"Ana Flores","customer_phone":"934567891","id":5,"items_count":"0","payment_method":"Tarjeta","sale_code":"SALE-005","status":"completed","total_amount":"279.80","user_name":"Admin YeniJeans"},{"created_at":"2025-12-06T09:18:23.831Z","customer_email":"jose@email.com","customer_name":"José Ramírez","customer_phone":"923456789","id":4,"items_count":"0","payment_method":"Transferencia","sale_code":"SALE-004","status":"completed","total_amount":"119.90","user_name":"Admin YeniJeans"},{"created_at":"2025-12-05T09:18:23.831Z","customer_email":"carmen@email.com","customer_name":"Carmen López","customer_phone":"945678912","id":3,"items_count":"0","payment_method":"Tarjeta","sale_code":"SALE-003","status":"completed","total_amount":"339.70","user_name":"Admin YeniJeans"},{"created_at":"2025-12-04T09:18:23.831Z","customer_email":"pedro@email.com","customer_name":"Pedro Sánchez","customer_phone":"912345678","id":2,"items_count":"0","payment_method":"Efectivo","sale_code":"SALE-002","status":"completed","total_amount":"149.90","user_name":"Admin YeniJeans"},{"created_at":"2025-12-03T09:18:23.831Z","customer_email":"laura@email.com","customer_name":"Laura Martínez","customer_phone":"987654321","id":1,"items_count":"0","payment_method":"Tarjeta","sale_code":"SALE-001","status":"completed","total_amount":"209.80","user_name":"Admin YeniJeans"}],"success":true}
 [00:00:46.678] Browser LOG     Analytics Data: {"analytics":{"period":30,"products":{"byCategory":[{"category":"Accesorios","count":1,"total_stock":50},{"category":"Jeans Degradados","count":1,"total_stock":15},{"category":"Jeans Clásicos","count":1,"total_stock":21},{"category":"Casacas","count":1,"total_stock":10}]},"sales":{"byDay":[{"date":"2025-12-09T05:00:00.000Z","revenue":179.8,"sales_count":1},{"date":"2025-12-08T05:00:00.000Z","revenue":269.7,"sales_count":2},{"date":"2025-12-07T05:00:00.000Z","revenue":279.8,"sales_count":1},{"date":"2025-12-06T05:00:00.000Z","revenue":119.9,"sales_count":1},{"date":"2025-12-05T05:00:00.000Z","revenue":339.7,"sales_count":1},{"date":"2025-12-04T05:00:00.000Z","revenue":149.9,"sales_count":1},{"date":"2025-12-03T05:00:00.000Z","revenue":209.8,"sales_count":1}],"byPaymentMethod":[{"count":3,"payment_method":"Tarjeta","total":829.3},{"count":3,"payment_method":"Efectivo","total":419.6},{"count":2,"payment_method":"Transferencia","total":299.7}],"topProducts":[{"product_code":"PRD-001","product_name":"Jean Clásico Negro","sales_count":2,"total_revenue":359.6,"total_sold":4}]},"summary":{"activeSuppliers":0,"averageSale":193.575,"lowStockProducts":0,"totalInventoryValue":7180.4,"totalProducts":4,"totalRevenue":1548.6,"totalSales":8,"totalSuppliers":3}},"success":true}
+<<<<<<< HEAD
 =======
 >>>>>>> 8b6e376 (Agregar punto final de clientes GET)
 [00:00:01.159] Server  LOG      ✓ Ready in 789ms
@@ -134,3 +138,5 @@
 =======
 >>>>>>> 354c89e (Agregar punto final de clientes GET)
 >>>>>>> 8b6e376 (Agregar punto final de clientes GET)
+=======
+>>>>>>> 9763b4b4ae7d06641f64ec79ce1fc92cb9ffc67a
