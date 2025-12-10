@@ -101,6 +101,23 @@ export function SuppliersManagement() {
         return;
       }
 
+      // After successful creation/update, trigger a notification
+      try {
+        // Create a short notification message
+        const notiPayload = {
+          type: editingId ? 'proveedor_actualizado' : 'proveedor_nuevo',
+          message: `${editingId ? 'Proveedor actualizado:' : 'Nuevo proveedor:'} ${formData.name}`,
+          meta: { supplierCode: formData.code }
+        };
+        await fetch('/api/notifications/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(notiPayload)
+        });
+      } catch (err) {
+        console.error('Failed to send supplier notification', err);
+      }
+
       alert(`Proveedor ${editingId ? 'actualizado' : 'creado'} exitosamente`);
       resetForm();
       fetchSuppliers();
@@ -229,7 +246,7 @@ export function SuppliersManagement() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium mb-2 text-foreground">
@@ -369,14 +386,14 @@ export function SuppliersManagement() {
             </div>
 
             <div className="flex gap-3 pt-4">
-              <Button type="submit" className="flex-1" disabled={loading}>
+              <Button onClick={handleSubmit} className="flex-1" disabled={loading}>
                 {editingId ? 'Actualizar' : 'Crear'} Proveedor
               </Button>
-              <Button type="button" variant="outline" onClick={resetForm}>
+              <Button variant="outline" onClick={resetForm}>
                 Cancelar
               </Button>
             </div>
-          </form>
+          </div>
         </Card>
       )}
 
