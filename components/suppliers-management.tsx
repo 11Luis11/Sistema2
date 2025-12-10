@@ -101,23 +101,6 @@ export function SuppliersManagement() {
         return;
       }
 
-      // After successful creation/update, trigger a notification
-      try {
-        // Create a short notification message
-        const notiPayload = {
-          type: editingId ? 'proveedor_actualizado' : 'proveedor_nuevo',
-          message: `${editingId ? 'Proveedor actualizado:' : 'Nuevo proveedor:'} ${formData.name}`,
-          meta: { supplierCode: formData.code }
-        };
-        await fetch('/api/notifications/add', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(notiPayload)
-        });
-      } catch (err) {
-        console.error('Failed to send supplier notification', err);
-      }
-
       alert(`Proveedor ${editingId ? 'actualizado' : 'creado'} exitosamente`);
       resetForm();
       fetchSuppliers();
